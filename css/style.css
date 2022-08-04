@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Solway:wght@300&display=swap');
 
 *{
 	box-sizing: border-box;
@@ -56,5 +56,37 @@ body,html{
  	height: 64px;
  }
 
+/*SERVICES*/
+
+.service{
+	margin: 10px;
+	font-family: 'Open sans',sans-serif;
+	min-height: 600px;
+}
+
+.row{
+	margin-left: 2rem;
+}
+.card{
+	margin-top: 2rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 20%;
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+.card:hover{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container{
+	padding: 2px 16px;
+}
+
+.service-h4{
+margin-top: 10px;
+font-size: 19px;
+}
 
 
