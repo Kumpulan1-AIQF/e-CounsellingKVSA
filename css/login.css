@@ -2,8 +2,9 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-image: linear-gradient(to right, #D500F9, #FFD54F);
+   background-color: white;
     background-repeat: no-repeat;
+    min-height: 800px;
 }
 
 input, textarea {
@@ -41,13 +42,14 @@ button:focus {
 }
 
 .card1 {
+    background-color: #cccccc;
     width: 50%;
     padding: 40px 30px 10px 30px;
 }
 
 .card2 {
     width: 50%;
-    background-image: linear-gradient(to right, #FFD54F, #D500F9);
+    background-color: #457B9D;
 }
 
 #logo {
@@ -85,7 +87,7 @@ button:focus {
 .btn-color {
     border-radius: 50px;
     color: #fff;
-    background-image: linear-gradient(to right, #FFD54F, #D500F9);
+    background-color: #457B9D;
     padding: 15px;
     cursor: pointer;
     border: none !important;
@@ -94,7 +96,7 @@ button:focus {
 
 .btn-color:hover {
     color: #fff;
-    background-image: linear-gradient(to right, #D500F9, #FFD54F);
+    background-image: #457B9D;
 }
 
 .btn-white {
@@ -126,6 +128,10 @@ a:hover {
 
 .sm-text {
     font-size: 15px;
+}
+
+.help{
+    margin-top: 100px;
 }
 
 @media screen and (max-width: 992px) {
