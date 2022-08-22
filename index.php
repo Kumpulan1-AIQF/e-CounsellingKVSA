@@ -130,7 +130,7 @@
     </section>
 
     <!-- Service -->
-    <section class="py-5 section-3" id="service">
+    <section class="py-5 section-1" id="service">
 
         <div class="service">
             <h2 style="text-align: center;">Services</h2>
@@ -171,7 +171,7 @@
     </section>
 
     <!-- About Us -->
-    <section class="py-5 section-4" id="aboutus">
+    <section class="py-5 section-2" id="aboutus">
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-6">
@@ -187,7 +187,7 @@
     </section>
 
     <!-- Contact Us -->
-    <section class="py-5 section-5" id="contactus">
+    <section class="py-5 section-1" id="contactus">
         <div class="container py-5 text-center">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
