@@ -50,7 +50,7 @@ include "conn.php";
                             <form action="process-login_admin.php" method="POST">
                                 <?php if(isset($_GET['error'])) { ?>
                                 <p class="error"><?php echo $_GET['error']; ?></p>
-                              <?php  }?>
+                                <?php  }?>
                             <div class="form-group">
                                 <label class="form-control-label ">ID User</label>
                                 <input type="text" id="text" name="id_admin" placeholder="" class="form-control">
