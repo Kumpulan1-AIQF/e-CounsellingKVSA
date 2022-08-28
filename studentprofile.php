@@ -1,3 +1,7 @@
+<?php
+include 'conn.php';
+session_start();
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -96,17 +100,15 @@
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div class="container"><a class="navbar-brand" href="#home">
-            <img src="logo.png">
+            <img src="img\logo.png">
             <strong class="h6 mb-0 font-weight-bold text-uppercase">e-Counselling KVSA</strong></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="EDIT HERE">Session |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#event">Event |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#service">Service |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About us |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contactus">Contact us |</a></li>
+                   <li class="nav-item"><a class="nav-link" href="studentProfile.php">Profile |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tempahan.php">Tempah |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="appointment.php">Session |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Log Keluar |</a></li>
                 </ul>
             </div>
         </div>
@@ -114,16 +116,16 @@
 </header>
 
     <div class="mborder">
-        <h6 class="title">Farah's Profile</h6>
-        <img class="student" src="img/student.jpg">
+        <h6 class="title"><?php echo $_SESSION['Fullname'];?> Profile</h6>
+        <img class="student" src="img/profile.png">
         <content class="info">
-            <h6 class="font">Name : Farah Adilah</h6>
-            <h6 class="font">Class : 2 DVM IPD</h6>
-            <h6 class="font">Ic : 030130-12-3456
-            <h6 class="font">Cohort : 2019</h6>  
-            <h6 class="font">Completed Sessions : 4</h6>  
+            <h6 class="font">NAMA : <?php echo $_SESSION['Fullname'];?></h6>
+            <h6 class="font">KELAS : <?php echo $_SESSION['Kelas'];?></h6>
+            <h6 class="font">NO IC : <?php echo $_SESSION['IC'];?>
+            <h6 class="font">KOHORT : <?php echo $_SESSION['Kohort'];?></h6> 
         </content>
-        <button class="button">Back</button>
+        <a href="tempahan.php"><button>Tempah Sesi Kaunseling</button></a>
+        <a href="appointment.php"><button>Lihat Jadual</button></a>
     </div>
 
 </body>
