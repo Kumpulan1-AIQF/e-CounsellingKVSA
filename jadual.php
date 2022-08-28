@@ -1,6 +1,10 @@
+<?php
+include 'conn.php';
+session_start();
+$kaunselor = $_SESSION['Nama_Kauselor'];
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,15 +31,18 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
                 <div class="sidebar-brand-text mx-1">e-Counselling KVSA</div>
             </a>
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="kaunselor-profile.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -50,12 +57,22 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="jadual.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Senarai Tempahan</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="logout.php" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Log Keluar</span>
+                </a>
+            </li>
+
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -107,22 +124,7 @@
                         </li>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-
+                      
                     </ul>
 
                 </nav>
@@ -144,6 +146,13 @@
                         <div class="col-xl-8 col-lg-10">
                             <div class="card shadow mb-4" style="width: 76rem;">
                                 <!-- Card Header - Dropdown -->
+                                <?php
+                                $sql = "SELECT * FROM Tempahan WHERE Kaunselor = '$kaunselor'";
+                                $query = mysqli_query($mysqli,$sql);
+                                ?>
+                                <?php
+                                if (mysqli_num_rows($query) > 0) {
+                                ?>
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Senarai Tempahan</h6>
@@ -151,51 +160,55 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
 
-                                    <table class="table table-striped">
+                                    <table class="table">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">ID_Tempahan</th>
                                                 <th scope="col">Nama</th>
                                                 <th scope="col">Kelas</th>
                                                 <th scope="col">Servis</th>
                                                 <th scope="col">Tarikh</th>
                                                 <th scope="col">Masa</th>
                                                 <th scope="col">Kaunselor</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Sebab</th>
                                                 <th scope="col">Accept</th>
                                                 <th scope="col">Edit</th>
                                                 <th scope="col">Delete</th>
                                             </tr>
                                         </thead>
+                                        <?php
+                                        $i = 0;
+                                        while ($row = mysqli_fetch_array($query)) {
+                                            $i++;
+                                        ?>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td><input type="submit" class="btn btn-success" value="Accept"></td>
-                                                <td><input type="submit" class="btn btn-warning" value="Edit"></td> 
-                                                <td><input type="submit" class="btn btn-danger" value="Delete"></td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td>@mdo</td>
-                                                <td><input type="submit" class="btn btn-success" value="Accept"></td>
-                                                <td><input type="submit" class="btn btn-warning" value="Edit"></td>
-                                                <td><input type="submit" class="btn btn-danger" value="Delete"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                <td><?php echo $row['ID_Tempahan']; ?></td>
+                <td><?php echo $row['Nama']; ?></td>
+                <td><?php echo $row['Kelas']; ?></td>
+                <td><?php echo $row['Servis']; ?></td>
+                <td><?php echo $row['Tarikh']; ?></td>
+                <td><?php echo $row['Masa']; ?></td>
+                <td><?php echo $row['Kaunselor']; ?></td>
+                <td><?php echo $row['status']; ?></td>
+                 <td><?php echo $row['sebab']; ?></td>
 
+                 <td><?php echo '<a href="pros_accept.php?ID_Tempahan='.$row['ID_Tempahan'].'" class="btn btn-success" onclick="return confirm(`Are you sure want to accept?`)">'.'Accept'.'</a>';?></td>
+
+                <td><?php echo '<a href="form_edit.php?ID_Tempahan='.$row['ID_Tempahan'].'" class="btn btn-warning">'.'Edit'.'</a>';?></td>
+
+                <td><?php echo '<a href="form_batal.php?ID_Tempahan='.$row['ID_Tempahan'].'" class="btn btn-danger" onclick="return confirm(`Are you sure want to Cancelled?`)">'.'Batal'.'</a>';?></td>
+                
+                                            </tr>
+                                        </tbody>
+                                        <?php
+}
+                                        ?>
+                                    </table>
+<?php
+}
+                                        ?>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +269,8 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    <script type="text/javascript">
+    </script>
 </body>
 
 </html>
