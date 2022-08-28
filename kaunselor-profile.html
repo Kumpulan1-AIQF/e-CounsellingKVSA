@@ -1,3 +1,7 @@
+<?php
+include "conn.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +39,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="kaunselor-profile.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -49,21 +53,23 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="jadual.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Senarai Tempahan</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                    aria-controls="collapseTwo">
+           <li class="nav-item">
+                <a class="nav-link collapsed" href="logout.php" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>User Profile</span>
+                    <span>Log Keluar</span>
                 </a>
             </li>
+
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -116,11 +122,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/profilepic.png">
-                            </a>
+                           
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -156,15 +158,18 @@
                     <div class="row">
 
                         <!-- Area Chart -->
+                        <?php
+                        $id = $_SESSION['ID_Kaunselor'];
+                        $sql = "SELECT * FROM kaunselor WHERE ID_Kaunselor = '$id'";
+                        $query = mysqli_query($mysqli,$sql);
+                        ?>
                         <div class="col-xl-8 col-lg-10">
                             
                             <div class="row " style="width: 76rem;">
                                 <div class="col-lg-4">
                                     <div class="card mb-4">
                                         <div class="card-body text-center">
-                                            <img src="img/profilepic.png" alt="avatar"
-                                                class="rounded-circle img-fluid" style="width: 150px;">
-                                            <h5 class="my-3">Douglas McGee</h5>
+                                            <h5 class="my-3"><?php echo $_SESSION['Nama_Kauselor'] ;?></h5>
                                             <p class="text-muted mb-1">Kaunselor</p>
                                         </div>
                                     </div>
@@ -177,7 +182,7 @@
                                                     <p class="mb-0">Full Name</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Johnatan Smith</p>
+                                                    <p class="text-muted mb-0"><?php echo $_SESSION['Nama_Kauselor'] ;?></p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -186,7 +191,7 @@
                                                     <p class="mb-0">Email</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">example@example.com</p>
+                                                    <p class="text-muted mb-0"><?php echo $_SESSION['Email'];?></p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -195,25 +200,11 @@
                                                     <p class="mb-0">Mobile</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">(+60)1 765-4321</p>
+                                                    <p class="text-muted mb-0"><?php echo $_SESSION['noTel'];?></p>
                                                 </div>
                                             </div>
                                             <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <p class="mb-0">Address</p>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <button class="btn btn-success">Update Profile</button>
-                                                </div>
-                                                
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
