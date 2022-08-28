@@ -31,7 +31,10 @@ if (isset($_POST['id_user']) && ($_POST['psw'])) {
 				$_SESSION['ID_User'] = $row['ID_User'];
 				$_SESSION['Fullname'] = $row['Fullname'];
 				$_SESSION['Password'] = $row['Password'];
-				header("Location:landingpage.php");
+				$_SESSION['Kelas'] = $row['Kelas'];
+				$_SESSION['IC'] = $row['IC'];
+				$_SESSION['Kohort'] = $row['Kohort'];
+				header("Location:studentProfile.php");
 			}
 		}
 			else{
