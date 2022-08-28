@@ -1,2 +1,38 @@
 Link
 https://getbootstrap.com/docs/4.0/components/card/
+
+
+---------------------------------------------------
+28/8/22 - Testing
+---------------------------------------------------
+`Tak function site
+---------------------------------------------------
+-> appointment.php
+-> process_booking.php
+-> kaunselor-profile.php
+-> form_batal.php
+----------------------!!---------------------------
+
+---------------------------------------------------
+`nav/button tak berfungsi
+---------------------------------------------------
+-> login.php
+-> logout.php (directory tak tepat)
+
+-> register.php 
+(Dashboard, Download Template Register, Log Keluar)
+
+-> Log Out
+(Admin & Kaunselor butang log keluar tidak berfungsi)
+----------------------!!---------------------------
+
+---------------------------------------------------
+*Tambahan
+-> login.php 
+(Letak link admin & kaunselor supaya terus pergi page login, tak perlu ubah link dkt address)
+
+-> index.php
+(Get Started - link login.php)
+(Learn More - link #event)
+
+---------------------------------------------------
