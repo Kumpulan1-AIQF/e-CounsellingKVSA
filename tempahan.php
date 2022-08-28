@@ -1,3 +1,8 @@
+<?php
+session_start();
+$nama = $_SESSION['Fullname'];
+$kelas = $_SESSION['Kelas'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,12 +34,10 @@
                     aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home |</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Session |</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#event">Event |</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#service">Service |</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#aboutus">About us |</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contactus">Contact us |</a></li>
+                       <li class="nav-item"><a class="nav-link" href="studentProfile.php">Profile |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tempahan.php">Tempah |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="appointment.php">Session |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Log Keluar |</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +55,7 @@
 
     <!-- Service -->
     <section>
-
+        <form action="process_booking.php" method="POST">
         <div class="d-flex justify-content-center">
             
             <div class="card" style="width: 40rem;">
@@ -61,25 +64,26 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Nama</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nama" value="<?php echo $nama ?>" readonly>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Kelas</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="kelas" value="<?php echo $kelas ?>" readonly>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Servis</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" name="servis">
                             <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Individu">Individu</option>
+                            <option value="Berkumpulan">Berkumpulan</option>
+                            <option value="Sokongan Khas">Sokongan Khas</option>
+                            <option value="Psikologi">Psikologi</option>
                         </select>
                     </div>
 
@@ -87,25 +91,31 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Tarikh</span>
                         </div>
-                        <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="tarikh">
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Masa</span>
                         </div>
-                        <input type="time" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <select class="custom-select" id="inputGroupSelect01" name="masa">
+                            <option selected>Choose...</option>
+                            <option value="09.00">09.00</option>
+                            <option value="10.00">10.00</option>
+                            <option value="11.00">11.00</option>
+                            <option value="12.00">12.00</option>
+                        </select>
                     </div>
                     
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Kaunselor</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" name="kaunselor">
                             <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="En.Sabrani">En.Sabrani</option>
+                            <option value="En.Amien">En.Amien</option>
+                            <option value="En.Iqbal">En.Iqbal</option>
                         </select>
                     </div>
 
@@ -115,7 +125,7 @@
             </div>
 
         </div>
-
+    </form>
     </section>
 
 </body>
