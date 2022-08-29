@@ -62,7 +62,7 @@ include "conn.php";
                             </div>
 
                             <div class="row justify-content-center my-3 px-3">
-                                <button class="btn-block btn-color">Login to Session</button>
+                                <button class="btn-block btn-color">Login</button>
                             </div>
                         </form>
                         </div>
