@@ -53,17 +53,15 @@
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div class="container"><a class="navbar-brand" href="#home">
-            <img src="logo.png">
+            <img src="img\logo.png">
             <strong class="h6 mb-0 font-weight-bold text-uppercase">e-Counselling KVSA</strong></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="EDIT HERE">Session |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#event">Event |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#service">Service |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About us |</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contactus">Contact us |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="studentProfile.php">Profile |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tempahan.php">Tempah |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="appointment.php">Session |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Log Keluar |</a></li>
                 </ul>
             </div>
         </div>
@@ -73,11 +71,11 @@
 <center>
     <div class="mborder">
         <h4>Booking Confirmed</h4>
-        <img class="tick" src="tick.png" width="80" height="80">
+        <img class="tick" src="img\tick.png" width="80" height="80">
         <h5>Terima kasih kerana menempah!</h5>
         <h5>Sila tunggu tindakan selanjutnya</h5>
-        <button class="button">Semak</button>
-        <button class="button">Kembali</button>
+        <a href="appointment.php"><button class="button">Semak</button></a>
+        <a href="studentProfile.php"><button class="button">Kembali</button></a>
     </div>
 </center>
 </body>
