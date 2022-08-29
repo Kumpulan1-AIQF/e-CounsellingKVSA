@@ -25,14 +25,11 @@ https://getbootstrap.com/docs/4.0/components/card/
 ----------------------!!---------------------------
 
 ---------------------------------------------------
-*Tambahan
--> login.php 
-(Letak link admin & kaunselor supaya terus pergi page login, tak perlu ubah link dkt address)
 
 -> index.php
 (Get Started - link login.php)
 (Learn More - link #event)
 
 ---------------------------------------------------
-Disable choose kt form
 Disable sebelum date
+In-Progress tukar pending (Keterangan pending)
