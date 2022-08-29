@@ -17,7 +17,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body>  
     <!-- Sticky navbar-->
     <header class="header sticky-top">
         <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white py-3 shadow-sm">

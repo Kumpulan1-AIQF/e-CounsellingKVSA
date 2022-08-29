@@ -4,17 +4,17 @@ $noti = "";
 if (isset($_POST['import'])) {
     $fileName = $_FILES['file']['tmp_name'];
     if ($_FILES['file']['size'] > 0) {
-        $file = fopen($fileName,'r');
+        $file = fopen($fileName, 'r');
 
-        while (($column = fgetcsv($file,100000,',')) !== FALSE) {
-            $sqlInsert = 
-            "Insert into pengguna (ID_User,Fullname,Password,Kelas) values ('".$column[0]."','".$column[1]."','".$column[2]."','".$column[3]."')";
+        while (($column = fgetcsv($file, 100000, ',')) !== FALSE) {
+            $sqlInsert =
+                "Insert into pengguna (ID_User,Fullname,Password,Kelas) values ('" . $column[0] . "','" . $column[1] . "','" . $column[2] . "','" . $column[3] . "')";
 
-            $result = mysqli_query($mysqli,$sqlInsert);
+            $result = mysqli_query($mysqli, $sqlInsert);
 
             if (!empty($result)) {
                 $noti =  "CSV has been import into databases";
-            }else{
+            } else {
                 $noti = "Problem in importing";
             }
         }
@@ -29,13 +29,11 @@ if (isset($_POST['import'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin - e-Counselling KVSA</title>
-    
+
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
 
@@ -50,43 +48,23 @@ if (isset($_POST['import'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-1">e-Counselling KVSA</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Function    
-            </div>
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="register.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Register Student</span>
                 </a>
             </li>
 
-             <li class="nav-item">
-                <a class="nav-link collapsed" href="logout.php" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="logout.php">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Log Keluar</span>
                 </a>
@@ -119,18 +97,14 @@ if (isset($_POST['import'])) {
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -143,10 +117,9 @@ if (isset($_POST['import'])) {
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            
+
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -165,8 +138,7 @@ if (isset($_POST['import'])) {
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Register Student</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Download Template Register</a>
+                        <a href="file/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" download><i class="fas fa-download fa-sm text-white-50"></i> Download Template Register</a>
                     </div>
 
                     <!-- Content Row -->
@@ -177,8 +149,7 @@ if (isset($_POST['import'])) {
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Register</h6>
                                 </div>
                                 <!-- Card Body -->
@@ -194,15 +165,15 @@ if (isset($_POST['import'])) {
                                         </div>
                                         <div class="custom-file">
                                             <form class="form-horizontal" action="" method="post" name="uploadcsv" enctype="multipart/form-data">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="file" accept=".csv">
-                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                            
-                                        </div>    
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="file">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                                        </div>
                                     </div>
                                     <h6 class="m-0">Format : CSV</h6>
-                                    <h6><?php echo $noti;?></h6>
-                                     <input type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="import" />
-                                 </form>
+                                    <h6><?php echo $noti; ?></h6>
+                                    <input type="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="import" />
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -227,26 +198,6 @@ if (isset($_POST['import'])) {
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -267,4 +218,3 @@ if (isset($_POST['import'])) {
 </body>
 
 </html>
-
