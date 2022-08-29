@@ -79,7 +79,7 @@ $kelas = $_SESSION['Kelas'];
                             <label class="input-group-text" for="inputGroupSelect01">Servis</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="servis">
-                            <option selected>Choose...</option>
+                            <option selected disabled>Choose...</option>
                             <option value="Individu">Individu</option>
                             <option value="Berkumpulan">Berkumpulan</option>
                             <option value="Sokongan Khas">Sokongan Khas</option>
@@ -99,7 +99,7 @@ $kelas = $_SESSION['Kelas'];
                             <span class="input-group-text" id="inputGroup-sizing-default">Masa</span>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="masa">
-                            <option selected>Choose...</option>
+                            <option selected disabled>Choose...</option>
                             <option value="09.00">09.00</option>
                             <option value="10.00">10.00</option>
                             <option value="11.00">11.00</option>
@@ -112,7 +112,7 @@ $kelas = $_SESSION['Kelas'];
                             <label class="input-group-text" for="inputGroupSelect01">Kaunselor</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" name="kaunselor">
-                            <option selected>Choose...</option>
+                            <option selected disabled>Choose...</option>
                             <option value="En.Sabrani">En.Sabrani</option>
                             <option value="En.Amien">En.Amien</option>
                             <option value="En.Iqbal">En.Iqbal</option>
