@@ -63,8 +63,12 @@ include "conn.php";
 
                             <div class="row justify-content-center my-3 px-3">
                                 <button class="btn-block btn-color">Login to Session</button>
+                                <a href="login_kaunselor.php"><button class="btn-block btn-color">Login Kaunselor</button></a>
+                                <a href="login_admin.php"><button class="btn-block btn-color">Login Admin</button></a>
+
                             </div>
                         </form>
+
                         </div>
                     </div>
                 </div>
