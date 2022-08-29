@@ -31,9 +31,6 @@ $kaunselor = $_SESSION['Nama_Kauselor'];
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
                 <div class="sidebar-brand-text mx-1">e-Counselling KVSA</div>
             </a>
 
@@ -57,16 +54,14 @@ $kaunselor = $_SESSION['Nama_Kauselor'];
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="jadual.php" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="jadual.php" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Senarai Tempahan</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="logout.php" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="logout.php" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Log Keluar</span>
                 </a>

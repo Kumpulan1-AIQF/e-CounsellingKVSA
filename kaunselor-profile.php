@@ -53,17 +53,15 @@ session_start();
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-             <li class="nav-item">
-                <a class="nav-link collapsed" href="jadual.php" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item">
+                <a href="jadual.php" class="nav-link collapsed" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Senarai Tempahan</span>
                 </a>
             </li>
 
-           <li class="nav-item">
-                <a class="nav-link collapsed" href="logout.php" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item">
+                <a href="logout.php" class="nav-link collapsed" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Log Keluar</span>
                 </a>
