@@ -3,6 +3,7 @@ include "conn.php";
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +21,8 @@ include "conn.php";
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div class="container"><a class="navbar-brand" href="#home">
-            <img src="img/logo.png">
-            <strong class="h6 mb-0 font-weight-bold text-uppercase">e-Counselling KVSA</strong></a>
+                <img src="img/logo.png">
+                <strong class="h6 mb-0 font-weight-bold text-uppercase">e-Counselling KVSA</strong></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
@@ -48,26 +49,26 @@ include "conn.php";
 
                             <h6 class="msg-info" style="text-align: center;">Log in</h6>
                             <form action="process-login.php" method="POST">
-                                <?php if(isset($_GET['error'])) { ?>
-                                <p class="error"><?php echo $_GET['error']; ?></p>
-                              <?php  }?>
-                            <div class="form-group">
-                                <label class="form-control-label ">ID User</label>
-                                <input type="text" id="text" name="id_user" placeholder="" class="form-control">
-                            </div>
+                                <?php if (isset($_GET['error'])) { ?>
+                                    <p class="error"><?php echo $_GET['error']; ?></p>
+                                <?php  } ?>
+                                <div class="form-group">
+                                    <label class="form-control-label ">ID User</label>
+                                    <input type="text" id="text" name="id_user" placeholder="" class="form-control">
+                                </div>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Password</label>
-                                <input type="password" id="psw" name="psw" placeholder="" class="form-control">
-                            </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Password</label>
+                                    <input type="password" id="psw" name="psw" placeholder="" class="form-control">
+                                </div>
 
-                            <div class="row justify-content-center my-3 px-3">
-                                <button class="btn-block btn-color">Login to Session</button>
-                                <a href="login_kaunselor.php"><button class="btn-block btn-color">Login Kaunselor</button></a>
-                                <a href="login_admin.php"><button class="btn-block btn-color">Login Admin</button></a>
+                                <div class="row justify-content-center my-3 px-3">
+                                    <button class="btn-block btn-color">Login</button>
+                                    <a class="btn-block text-center" href="login_kaunselor.php">Kaunselor</a>
+                                    <a class="btn-block text-center" href="login_admin.php">Admin</a>
 
-                            </div>
-                        </form>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
@@ -75,11 +76,14 @@ include "conn.php";
                 <div class="card card2">
                     <div class="my-auto mx-md-5 px-md-5 right">
                         <div class="row justify-content-center px-3 mb-3">
-                                <img id="logo" src="img\logo.png"><h3>E-Counseling</h3>
-                            </div>
+                            <img id="logo" src="img\logo.png">
+                            <h3>E-Counseling</h3>
+                        </div>
                         <h3 class="text-white text-center">“We must be taught how to think, not what to think”</h3>
 
-                        <div class="help"><h3 class="text-white text-center">Need Our Help?</h3></div>
+                        <div class="help">
+                            <h3 class="text-white text-center">Need Our Help?</h3>
+                        </div>
                     </div>
                 </div>
             </div>
