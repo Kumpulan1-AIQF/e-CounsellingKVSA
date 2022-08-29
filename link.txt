@@ -8,7 +8,6 @@ https://getbootstrap.com/docs/4.0/components/card/
 `Tak function site
 ---------------------------------------------------
 -> appointment.php
--> process_booking.php
 -> kaunselor-profile.php
 -> form_batal.php
 ----------------------!!---------------------------
@@ -36,3 +35,5 @@ https://getbootstrap.com/docs/4.0/components/card/
 (Learn More - link #event)
 
 ---------------------------------------------------
+Disable choose kt form
+Disable sebelum date
