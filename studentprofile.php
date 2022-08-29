@@ -117,7 +117,7 @@ session_start();
 
     <div class="mborder">
         <h6 class="title"><?php echo $_SESSION['Fullname'];?> Profile</h6>
-        <img class="student" src="img/profile.png">
+        <img class="student" src="img/profilepic.png">
         <content class="info">
             <h6 class="font">NAMA : <?php echo $_SESSION['Fullname'];?></h6>
             <h6 class="font">KELAS : <?php echo $_SESSION['Kelas'];?></h6>
