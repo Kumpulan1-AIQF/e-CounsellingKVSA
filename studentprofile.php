@@ -105,7 +105,7 @@ session_start();
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                   <li class="nav-item"><a class="nav-link" href="studentProfile.php">Profile |</a></li>
+                    <li class="nav-item"><a class="nav-link" href="studentProfile.php">Profile |</a></li>
                     <li class="nav-item"><a class="nav-link" href="tempahan.php">Tempah |</a></li>
                     <li class="nav-item"><a class="nav-link" href="appointment.php">Session |</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Log Keluar |</a></li>
