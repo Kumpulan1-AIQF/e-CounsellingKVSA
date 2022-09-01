@@ -91,7 +91,7 @@ $kelas = $_SESSION['Kelas'];
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Tarikh</span>
                         </div>
-                        <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="tarikh">
+                        <input type="date" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="tarikh" name="tarikh" min="">
                     </div>
 
                     <div class="input-group mb-3">
@@ -128,6 +128,20 @@ $kelas = $_SESSION['Kelas'];
     </form>
     </section>
 
+    <script type="text/javascript">
+        var date = new Date();
+        var tdate = date.getDate();
+        var month = date.getMonth() + 1;
+        if (tdate<10) {
+            tdate = '0' + tdate;
+        }
+        if (month<10) {
+            month = '0' + month;
+        }
+        var year = date.getUTCFullYear();
+        var minDate = year + "-" + month + "-" + tdate;
+        document.getElementById('tarikh').setAttribute('min',minDate);
+    </script>
 </body>
     
 </html>
