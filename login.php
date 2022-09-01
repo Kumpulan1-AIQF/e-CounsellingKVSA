@@ -54,12 +54,12 @@ include "conn.php";
                                 <?php  } ?>
                                 <div class="form-group">
                                     <label class="form-control-label ">ID User</label>
-                                    <input type="text" id="text" name="id_user" placeholder="" class="form-control">
+                                    <input type="text" id="text" name="id_user" placeholder="" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-control-label">Password</label>
-                                    <input type="password" id="psw" name="psw" placeholder="" class="form-control">
+                                    <input type="password" id="psw" name="psw" placeholder="" class="form-control" required>
                                 </div>
 
                                 <div class="row justify-content-center my-3 px-3">

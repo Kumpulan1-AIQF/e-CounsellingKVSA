@@ -165,7 +165,7 @@ if (isset($_POST['import'])) {
                                         </div>
                                         <div class="custom-file">
                                             <form class="form-horizontal" action="" method="post" name="uploadcsv" enctype="multipart/form-data">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="file" required>
                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 
                                         </div>
