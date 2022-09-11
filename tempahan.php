@@ -76,7 +76,7 @@ $kelas = $_SESSION['Kelas'];
                                 <label class="input-group-text" for="inputGroupSelect01">Servis</label>
                             </div>
                             <select class="custom-select form-control" id="inputGroupSelect01" name="servis" required>
-                                <option selected disabled>Choose...</option>
+                                <option selected disabled value="">Choose...</option>
                                 <option value="Individu">Individu</option>
                                 <option value="Berkumpulan">Berkumpulan</option>
                                 <option value="Sokongan Khas">Sokongan Khas</option>
