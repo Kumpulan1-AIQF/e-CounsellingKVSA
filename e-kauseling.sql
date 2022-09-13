@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2022 at 06:08 PM
+-- Generation Time: Sep 13, 2022 at 04:52 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `e-kaunseling`
+-- Database: `e-kauseling`
 --
 
 -- --------------------------------------------------------
@@ -60,6 +60,7 @@ CREATE TABLE `kaunselor` (
 
 INSERT INTO `kaunselor` (`ID_Kaunselor`, `Nama`, `Password`, `email`, `no_telefon`) VALUES
 (123, 'En.Amien', '123', 'amien.nazri@gmail.com', '0133331801'),
+(246, 'En.Iqbal', '123', 'iqbaalrith@gmail.com', '0189764525'),
 (321, 'En.Sabrani', '123', 'Sabrani@gmail.com', '0192333183');
 
 -- --------------------------------------------------------
@@ -108,21 +109,13 @@ CREATE TABLE `tempahan` (
 --
 
 INSERT INTO `tempahan` (`ID_Tempahan`, `Nama`, `Kelas`, `Servis`, `Tarikh`, `Masa`, `Kaunselor`, `status`, `sebab`) VALUES
-(1, 'ada', 'ada', 'Berkumpulan', '2022-08-29', '11.00', 'En.Sabrani', 'Selesai', 'Malas'),
-(2, 'ada', 'ada', 'Berkumpulan', '2022-08-29', '11.00', 'En.Sabrani', 'Batal', 'Malas'),
-(3, 'ada', 'ada', 'Individu', '2022-09-07', '10.00', 'En.Sabrani', 'Diterima', 'Malas'),
-(5, 'farah', 'ada', 'Berkumpulan', '2022-08-24', '10.00', 'En.Sabrani', 'Diterima', ''),
-(6, 'Abdullah Amien', '2dvmipd', 'Sokongan Khas', '2022-08-31', '10.00', 'En.Sabrani', 'Selesai', ''),
-(7, 'Abdullah Amien', '1 DVM IPD', 'Berkumpulan', '2022-08-01', '09.00', 'En.Amien', 'Batal', 'Cikgu xcukup masa'),
-(8, 'Abdullah Amien', '1 DVM IPD', 'Sokongan Khas', '2022-08-31', '11.00', 'En.Iqbal', '', ''),
-(9, 'Fitri Imtiaz', '1 DVM IPD', 'Berkumpulan', '2022-08-31', '10.00', 'En.Sabrani', '', ''),
-(10, 'Fitri Imtiaz', '1 DVM IPD', 'Individu', '2022-08-27', '11.00', 'En.Amien', 'Batal', 'Malas'),
-(11, 'Fitri Imtiaz', '1 DVM IPD', 'Individu', '2022-08-24', '12.00', 'En.Amien', 'inProgress', ''),
-(12, 'Fitri Imtiaz', '1 DVM IPD', 'Berkumpulan', '2022-08-13', '10.00', 'En.Amien', 'Batal', 'Malas'),
-(13, 'Fitri Imtiaz', '1 DVM IPD', 'Sokongan Khas', '2022-09-13', '10.00', 'En.Amien', 'inProgress', ''),
-(14, 'Abdullah Amien', '1 DVM IPD', 'Sokongan Khas', '2022-08-24', '11.00', 'En.Amien', 'inProgress', ''),
-(15, 'Abdullah Amien', '1 DVM IPD', 'Psikologi', '2022-08-31', '10.00', 'En.Sabrani', 'inProgress', ''),
-(16, 'Abdullah Amien', '1 DVM IPD', 'Berkumpulan', '2021-06-23', '10.00', 'En.Iqbal', 'inProgress', '');
+(1, 'Abdullah Amien', '1 DVM IPD', 'Individu', '2022-09-12', '10.00', 'En.Sabrani', 'Selesai', ''),
+(2, 'Abdullah Amien', '1 DVM IPD', 'Psikologi', '2022-09-20', '11.00', 'En.Iqbal', 'Batal', 'Tiada slot'),
+(3, 'Abdullah Amien', '1 DVM IPD', 'Berkumpulan', '2022-09-12', '09.00', 'En.Sabrani', 'inProgress', ''),
+(4, 'Abdullah Amien', '1 DVM IPD', 'Sokongan Khas', '2022-09-12', '10.00', 'En.Sabrani', 'Batal', 'Tiada slot'),
+(5, 'Fitri Imtiaz', '1 DVM IPD', 'Individu', '2022-09-12', '10.00', 'En.Sabrani', 'inProgress', ''),
+(6, 'Fitri Imtiaz', '1 DVM IPD', 'Berkumpulan', '2022-09-22', '09.00', 'En.Amien', 'Batal', 'Tiada slot'),
+(7, 'Abdullah Amien', '1 DVM IPD', 'Individu', '2022-09-12', '10.00', 'En.Sabrani', 'inProgress', '');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +153,7 @@ ALTER TABLE `tempahan`
 -- AUTO_INCREMENT for table `tempahan`
 --
 ALTER TABLE `tempahan`
-  MODIFY `ID_Tempahan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID_Tempahan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
